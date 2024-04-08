@@ -6,7 +6,7 @@ import "./style.scss";
 const Slider = () => {
   const { data } = useData();
   const [index, setIndex] = useState(0);
-  const sortedEvents = data?.focus.sort((evtA, evtB) =>
+  const sortedEvents = data?.focus?.sort((evtA, evtB) =>
     new Date(evtA.date) - new Date(evtB.date)
   );
 
@@ -36,7 +36,7 @@ const Slider = () => {
       ))}
       <div className="SlideCard__paginationContainer">
         <div className="SlideCard__pagination">
-          {sortedEvents.map((event) => (
+          {sortedEvents?.map((event) => (
             <input
               key={event.id}
               type="radio"
