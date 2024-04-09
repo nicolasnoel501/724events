@@ -18,7 +18,7 @@ const Slider = () => {
     }, 5000);
 
     return () => clearInterval(intervalId);
-  }, [sortedEvents, index]); // Ajout de 'index' comme dépendance
+  }, [sortedEvents, index]); 
 
   const handleClick = (idx) => {
     setIndex(idx);
