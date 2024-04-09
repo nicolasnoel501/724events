@@ -18,7 +18,11 @@ const Slider = () => {
     }, 5000);
 
     return () => clearInterval(intervalId);
-  }, [sortedEvents]);
+  }, [sortedEvents, index]); // Ajout de 'index' comme dépendance
+
+  const handleClick = (idx) => {
+    setIndex(idx);
+  };
 
   return (
     <div className="SlideCardList">
@@ -36,13 +40,14 @@ const Slider = () => {
       ))}
       <div className="SlideCard__paginationContainer">
         <div className="SlideCard__pagination">
-          {sortedEvents?.map((event) => (
+          {sortedEvents?.map((event, idx) => (
             <input
               key={event.id}
               type="radio"
               readOnly
               name="radio-button"
-              checked={index === sortedEvents.indexOf(event)}
+              checked={index === idx}
+              onClick={() => handleClick(idx)}
             />
           ))}
         </div>
