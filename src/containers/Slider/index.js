@@ -47,11 +47,7 @@ const Slider = () => {
             <div className="SlideCard__description">
               <h3>{event.title}</h3>
               <p>{event.description}</p>
-              <div>
-                {index === sortedEvents.length - 1
-                  ? "janvier"
-                  : getMonth(new Date(event.date))}
-              </div>
+              <div>{getMonth(new Date(event.date))}</div>
             </div>
           </div>
         </div>
