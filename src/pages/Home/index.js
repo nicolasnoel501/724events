@@ -13,7 +13,7 @@ import Modal from "../../containers/Modal";
 import { useData } from "../../contexts/DataContext";
 
 const Page = () => {
-  const { data } = useData();
+   const { data } = useData();
   // const qui vient chercher la dernière prestation
   const last =
     data && data.events && data.events.length > 0
